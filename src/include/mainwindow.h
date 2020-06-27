@@ -20,6 +20,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    /* Reset the build */
+    void reset();
+
 private:
     Ui::MainWindow *ui;
 };
