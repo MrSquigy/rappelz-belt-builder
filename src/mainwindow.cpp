@@ -5,6 +5,8 @@
  * along with this program.  If not, see https://www.gnu.org/licenses.
  */
 
+#include <QDebug>
+#include <QMetaEnum>
 #include "include/mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -74,10 +76,32 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Add connections
     ui->btnReset->connect(ui->btnReset, &QPushButton::clicked, this, &MainWindow::reset);
+    displayStats();
 }
 
 MainWindow::~MainWindow() {
     delete ui;
+}
+
+/* Display the build stats */
+void MainWindow::displayStats() {
+    QMap<Stats::Stat, float> stats = builder.getStatBenefits();
+    QList<QLabel*> statLabels = ui->statsParent->findChildren<QLabel*>();
+    QMetaEnum metaEnum = QMetaEnum::fromType<Stats::Stat>();
+
+    for (QLabel* label : statLabels) {
+        if (label->objectName() == "lblStatBenefits") continue;
+
+        // Get the stat's name
+        QString statName = label->objectName().remove("lbl");
+        statName[0] = statName[0].toLower();
+
+        // Get the stat from the name
+        float stat = metaEnum.keyToValue(statName.toStdString().c_str());
+        stat = stats[(Stats::Stat) stat];
+
+        label->setText(QString(statName + QString("\t\t") + QString::number(stat))); // Display the stat
+    }
 }
 
 /* Reset the build */
@@ -98,4 +122,6 @@ void MainWindow::reset() {
     ui->cbxStage6->setCurrentIndex(0);
     ui->cbxStage7->setCurrentIndex(0);
     ui->cbxStage8->setCurrentIndex(0);
+    builder.resetBuild();
+    displayStats();
 }

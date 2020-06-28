@@ -73,7 +73,7 @@
      <string>Reset</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="slotsParent">
     <property name="geometry">
      <rect>
       <x>11</x>
@@ -621,7 +621,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="statsParent">
     <property name="geometry">
      <rect>
       <x>356</x>
@@ -688,7 +688,7 @@
       </widget>
      </item>
      <item row="10" column="1">
-      <widget class="QLabel" name="lblHPRegen">
+      <widget class="QLabel" name="lblHpReg">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>
@@ -716,7 +716,7 @@
       </widget>
      </item>
      <item row="7" column="0">
-      <widget class="QLabel" name="lblPDef">
+      <widget class="QLabel" name="lblPdef">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>
@@ -730,7 +730,7 @@
       </widget>
      </item>
      <item row="7" column="1">
-      <widget class="QLabel" name="lblMDef">
+      <widget class="QLabel" name="lblMdef">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>
@@ -744,7 +744,7 @@
       </widget>
      </item>
      <item row="8" column="1">
-      <widget class="QLabel" name="lblBlockPer">
+      <widget class="QLabel" name="lblBlock">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>
@@ -831,7 +831,7 @@
       </widget>
      </item>
      <item row="11" column="1">
-      <widget class="QLabel" name="lblMPRegen">
+      <widget class="QLabel" name="lblMpReg">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>
@@ -887,7 +887,7 @@
       </widget>
      </item>
      <item row="4" column="0">
-      <widget class="QLabel" name="lblInt">
+      <widget class="QLabel" name="lblInt_">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>

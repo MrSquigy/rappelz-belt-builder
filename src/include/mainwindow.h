@@ -8,6 +8,8 @@
 #pragma once
 
 #include <QMainWindow>
+#include "stats.h"
+#include "beltbuilder.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,4 +27,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    BeltBuilder builder;
+
+    void displayStats();
 };
