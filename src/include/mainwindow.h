@@ -34,4 +34,6 @@ private:
     void updateBuilder();
 
     void updateBeltEnhance();
+
+    QMap<Stats::Stat, QString> statNames;
 };

@@ -247,7 +247,6 @@ QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int st
     if (pet == "Soul: HP Recov") stats.append(Stats::hpReg);
     if (pet == "Soul: MP Recov") stats.append(Stats::mpReg);
 
-
     for (Stats::Stat stat : stats) benefits.append(QPair<Stats::Stat, float>(stat, benefit));
 
     return benefits;

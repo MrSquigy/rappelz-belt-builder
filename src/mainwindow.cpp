@@ -73,6 +73,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                        };
     QStringList stages = {"0", "1", "2", "3", "4", "5"};
 
+    // Stat names
+    statNames = Stats::initStatNames();
+
     // Get all dropdowns
     QList<QComboBox*> dropdowns = ui->slotsParent->findChildren<QComboBox*>();
 
@@ -109,13 +112,21 @@ void MainWindow::displayStats() {
 
         // Get the stat benefit from the name
         float stat = metaEnum.keyToValue(statName.toStdString().c_str());
+        QString displayName = statNames[(Stats::Stat) stat];
         stat = stats[(Stats::Stat) stat];
 
         // Grey out if stat gains no benefit
         if (stat > 0) label->setStyleSheet("color: #000000");
         else label->setStyleSheet("color: #C8C8C8");
 
-        label->setText(QString(statName + "\t\t" + QString::number(stat) + "%")); // Display the stat
+        // Formatting
+        QString tabs = (displayName.length() > 7) ? "\t" : "\t\t";
+
+        // Formatting Exceptions
+        if (displayName == "Vitality") tabs = "\t\t";
+        if (displayName == "Wisdom") tabs = "\t";
+
+        label->setText(QString(displayName + tabs + QString::number(stat) + "%"));
     }
 }
 
