@@ -51,7 +51,7 @@ void BeltBuilder::setBeltEnhance(int level) {
 QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int stage) {
     QList<QPair<Stats::Stat, float>> benefits;
     QList<Stats::Stat> stats;
-    float benefit;
+    float benefit = 0;
 
     if (pet == "Angel") {
         benefit = 7.5 + 0.5 * stage;

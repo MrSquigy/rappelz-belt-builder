@@ -78,6 +78,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // Setup dropdowns
     for (QComboBox* cbx : dropdowns) {
+        if (cbx->objectName().contains("7") || cbx->objectName().contains("8")) continue;
         if (cbx->objectName().contains("Slot")) cbx->addItems(pets);
         else if (cbx->objectName().contains("Stage")) cbx->addItems(stages);
         cbx->connect(cbx, &QComboBox::currentTextChanged, this, &MainWindow::updateBuilder);
@@ -114,7 +115,7 @@ void MainWindow::displayStats() {
         if (stat > 0) label->setStyleSheet("color: #000000");
         else label->setStyleSheet("color: #C8C8C8");
 
-        label->setText(QString(statName + QString("\t\t") + QString::number(stat))); // Display the stat
+        label->setText(QString(statName + "\t\t" + QString::number(stat) + "%")); // Display the stat
     }
 }
 

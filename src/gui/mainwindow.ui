@@ -41,7 +41,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Don't forget to leave the last 3 slots open for boss cards.</string>
+     <string>Don't forget you can use up to 3 boss cards!</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -287,6 +287,9 @@
        </item>
        <item row="6" column="1">
         <widget class="QComboBox" name="cbxSlot7">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -300,6 +303,11 @@
            <stylestrategy>PreferDefault</stylestrategy>
           </font>
          </property>
+         <item>
+          <property name="text">
+           <string>Boss Cards Only</string>
+          </property>
+         </item>
         </widget>
        </item>
        <item row="7" column="0">
@@ -318,6 +326,9 @@
        </item>
        <item row="7" column="1">
         <widget class="QComboBox" name="cbxSlot8">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -331,6 +342,11 @@
            <stylestrategy>PreferDefault</stylestrategy>
           </font>
          </property>
+         <item>
+          <property name="text">
+           <string>Boss Cards Only</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>
@@ -530,76 +546,6 @@
        </item>
        <item row="5" column="1">
         <widget class="QComboBox" name="cbxStage6">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Leelawadee UI</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-           <stylestrategy>PreferDefault</stylestrategy>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="lblStage7">
-         <property name="font">
-          <font>
-           <family>Leelawadee UI</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-           <stylestrategy>PreferDefault</stylestrategy>
-          </font>
-         </property>
-         <property name="text">
-          <string>Stage</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QComboBox" name="cbxStage7">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Leelawadee UI</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-           <stylestrategy>PreferDefault</stylestrategy>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="lblStage8">
-         <property name="font">
-          <font>
-           <family>Leelawadee UI</family>
-           <pointsize>10</pointsize>
-           <weight>50</weight>
-           <bold>false</bold>
-           <stylestrategy>PreferDefault</stylestrategy>
-          </font>
-         </property>
-         <property name="text">
-          <string>Stage</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QComboBox" name="cbxStage8">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -1004,9 +950,7 @@
   <tabstop>cbxSlot6</tabstop>
   <tabstop>cbxStage6</tabstop>
   <tabstop>cbxSlot7</tabstop>
-  <tabstop>cbxStage7</tabstop>
   <tabstop>cbxSlot8</tabstop>
-  <tabstop>cbxStage8</tabstop>
   <tabstop>btnReset</tabstop>
  </tabstops>
  <resources/>
