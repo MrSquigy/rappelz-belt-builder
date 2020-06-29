@@ -219,6 +219,35 @@ QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int st
         stats.append({Stats::vit, Stats::pdef});
     }
 
+    // All but one soul pet have the same benefit amount
+    if (pet.contains("Soul:")) benefit = 13 + 1 * stage;
+
+    if (pet == "Soul: Agility") stats.append(Stats::agi);
+    if (pet == "Soul: Dexterity") stats.append(Stats::dex);
+    if (pet == "Soul: Intelligence") stats.append(Stats::int_);
+    if (pet == "Soul: Strength") stats.append(Stats::str);
+    if (pet == "Soul: Wisdom") stats.append(Stats::wis);
+    if (pet == "Soul: Vitality") stats.append(Stats::vit);
+
+    if (pet == "Soul: Vitality & Wisdom") {
+        benefit = 9 + 0.5 * stage; // Only soul pet with different benefit amount
+        stats.append({Stats::vit, Stats::wis});
+    }
+
+    if (pet == "Soul: P.Atk") stats.append(Stats::patk);
+    if (pet == "Soul: P.Def") stats.append(Stats::pdef);
+    if (pet == "Soul: P.Acc") stats.append(Stats::pacc);
+    if (pet == "Soul: Atk Spd") stats.append(Stats::atkSpd);
+    if (pet == "Soul: M.Atk") stats.append(Stats::matk);
+    if (pet == "Soul: M.Def") stats.append(Stats::mdef);
+    if (pet == "Soul: M.Acc") stats.append(Stats::macc);
+    if (pet == "Soul: Cast Spd") stats.append(Stats::castSpd);
+    if (pet == "Soul: Evasion") stats.append(Stats::eva);
+    if (pet == "Soul: Crit Rate") stats.append(Stats::crit);
+    if (pet == "Soul: HP Recov") stats.append(Stats::hpReg);
+    if (pet == "Soul: MP Recov") stats.append(Stats::mpReg);
+
+
     for (Stats::Stat stat : stats) benefits.append(QPair<Stats::Stat, float>(stat, benefit));
 
     return benefits;
