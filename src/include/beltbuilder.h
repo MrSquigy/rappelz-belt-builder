@@ -11,9 +11,14 @@ public:
 
     void resetBuild();
 
+    void setBuild(QList<QPair<QString, int>> build);
+
 private:
     /* Build stat benefits */
     QMap<Stats::Stat, float> statBenefits;
 
     void printStats();
+
+    QList<QPair<Stats::Stat, float>> getPetBenefits(QString pet, int stage);
+
 };

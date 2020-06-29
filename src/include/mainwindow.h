@@ -30,4 +30,6 @@ private:
     BeltBuilder builder;
 
     void displayStats();
+
+    void updateBuilder();
 };

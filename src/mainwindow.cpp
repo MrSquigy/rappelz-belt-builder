@@ -7,13 +7,14 @@
 
 #include <QDebug>
 #include <QMetaEnum>
+#include <QPair>
 #include "include/mainwindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    // Pet names
+    // Pet stuff
     QStringList pets = {"None",
                         "Angel",
                         "Baphomet",
@@ -54,27 +55,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                        };
     QStringList stages = {"0", "1", "2", "3", "4", "5"};
 
-    // Setup slot dropdowns
-    ui->cbxSlot1->addItems(pets);
-    ui->cbxSlot2->addItems(pets);
-    ui->cbxSlot3->addItems(pets);
-    ui->cbxSlot4->addItems(pets);
-    ui->cbxSlot5->addItems(pets);
-    ui->cbxSlot6->addItems(pets);
-    ui->cbxSlot7->addItems(pets);
-    ui->cbxSlot8->addItems(pets);
+    // Get all dropdowns
+    QList<QComboBox*> dropdowns = ui->slotsParent->findChildren<QComboBox*>();
 
-    // Setup stage dropdowns
-    ui->cbxStage1->addItems(stages);
-    ui->cbxStage2->addItems(stages);
-    ui->cbxStage3->addItems(stages);
-    ui->cbxStage4->addItems(stages);
-    ui->cbxStage5->addItems(stages);
-    ui->cbxStage6->addItems(stages);
-    ui->cbxStage7->addItems(stages);
-    ui->cbxStage8->addItems(stages);
+    // Setup dropdowns
+    for (QComboBox* cbx : dropdowns) {
+        if (cbx->objectName().contains("Slot")) cbx->addItems(pets);
+        else if (cbx->objectName().contains("Stage")) cbx->addItems(stages);
+        cbx->connect(cbx, &QComboBox::currentTextChanged, this, &MainWindow::updateBuilder);
+    }
 
-    // Add connections
+    // Add reset connection
     ui->btnReset->connect(ui->btnReset, &QPushButton::clicked, this, &MainWindow::reset);
     displayStats();
 }
@@ -96,32 +87,39 @@ void MainWindow::displayStats() {
         QString statName = label->objectName().remove("lbl");
         statName[0] = statName[0].toLower();
 
-        // Get the stat from the name
+        // Get the stat benefit from the name
         float stat = metaEnum.keyToValue(statName.toStdString().c_str());
         stat = stats[(Stats::Stat) stat];
+
+        // Grey out if stat gains no benefit
+        if (stat > 0) label->setStyleSheet("color: #000000");
+        else label->setStyleSheet("color: #C8C8C8");
 
         label->setText(QString(statName + QString("\t\t") + QString::number(stat))); // Display the stat
     }
 }
 
+void MainWindow::updateBuilder() {
+    QList<QPair<QString, int>> build;
+    QList<QComboBox*> dropdowns = ui->slotsParent->findChildren<QComboBox*>(); // get dropdowns
+    int count = 0;
+
+    for (QComboBox* cbx : dropdowns) {
+        if (count < 8) build.append(QPair<QString, int>(cbx->currentText(), 0));
+        else if (count >= 8) build[count % 8].second = cbx->currentIndex();
+        count++;
+    }
+
+    builder.setBuild(build);
+    displayStats();
+}
+
 /* Reset the build */
 void MainWindow::reset() {
-    ui->cbxSlot1->setCurrentIndex(0);
-    ui->cbxSlot2->setCurrentIndex(0);
-    ui->cbxSlot3->setCurrentIndex(0);
-    ui->cbxSlot4->setCurrentIndex(0);
-    ui->cbxSlot5->setCurrentIndex(0);
-    ui->cbxSlot6->setCurrentIndex(0);
-    ui->cbxSlot7->setCurrentIndex(0);
-    ui->cbxSlot8->setCurrentIndex(0);
-    ui->cbxStage1->setCurrentIndex(0);
-    ui->cbxStage2->setCurrentIndex(0);
-    ui->cbxStage3->setCurrentIndex(0);
-    ui->cbxStage4->setCurrentIndex(0);
-    ui->cbxStage5->setCurrentIndex(0);
-    ui->cbxStage6->setCurrentIndex(0);
-    ui->cbxStage7->setCurrentIndex(0);
-    ui->cbxStage8->setCurrentIndex(0);
+    // Get all dropdowns
+    QList<QComboBox*> dropdowns = ui->slotsParent->findChildren<QComboBox*>();
+    for (QComboBox* dropdown : dropdowns) dropdown->setCurrentIndex(0); // Reset all dropdowns
+
     builder.resetBuild();
     displayStats();
 }
