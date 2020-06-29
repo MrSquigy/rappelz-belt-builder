@@ -65,8 +65,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         cbx->connect(cbx, &QComboBox::currentTextChanged, this, &MainWindow::updateBuilder);
     }
 
-    // Add reset connection
+    // Add connections
     ui->btnReset->connect(ui->btnReset, &QPushButton::clicked, this, &MainWindow::reset);
+    ui->cbxBeltEnhance->connect(ui->cbxBeltEnhance, &QComboBox::currentTextChanged, this, &MainWindow::updateBeltEnhance);
     displayStats();
 }
 
@@ -112,6 +113,12 @@ void MainWindow::updateBuilder() {
 
     builder.setBuild(build);
     displayStats();
+}
+
+void MainWindow::updateBeltEnhance() {
+    int enhance = ui->cbxBeltEnhance->currentText() == "0-19" ? 0 : ui->cbxBeltEnhance->currentText().toInt();
+    builder.setBeltEnhance(enhance);
+    updateBuilder();
 }
 
 /* Reset the build */

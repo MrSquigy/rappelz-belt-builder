@@ -32,4 +32,6 @@ private:
     void displayStats();
 
     void updateBuilder();
+
+    void updateBeltEnhance();
 };

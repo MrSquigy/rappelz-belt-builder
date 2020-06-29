@@ -56,9 +56,9 @@
    <widget class="QPushButton" name="btnReset">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>254</x>
       <y>265</y>
-      <width>75</width>
+      <width>83</width>
       <height>26</height>
      </rect>
     </property>
@@ -929,6 +929,64 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="lblBeltEnhance">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>305</y>
+      <width>116</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Belt Enhancement</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cbxBeltEnhance">
+    <property name="geometry">
+     <rect>
+      <x>255</x>
+      <y>300</y>
+      <width>81</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>0-19</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>20</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>21</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>22</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>23</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>24</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>25</string>
+     </property>
+    </item>
    </widget>
   </widget>
  </widget>

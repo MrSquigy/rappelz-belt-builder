@@ -1,10 +1,9 @@
+#include <cmath>
 #include <QDebug>
 #include <QPair>
 #include "include/beltbuilder.h"
 
-
-
-BeltBuilder::BeltBuilder() {
+BeltBuilder::BeltBuilder() : enhance(0) {
     resetBuild();
 }
 
@@ -26,6 +25,7 @@ void BeltBuilder::resetBuild() {
 void BeltBuilder::setBuild(QList<QPair<QString, int>> build) {
     resetBuild();
 
+    // Calculate stat benefits
     for (QPair<QString, int> slot : build) {
         if (slot.first == "None") continue;
 
@@ -34,6 +34,18 @@ void BeltBuilder::setBuild(QList<QPair<QString, int>> build) {
             statBenefits[benefit.first] = std::min(statBenefits[benefit.first] + benefit.second, 30.f);
         }
     }
+
+    // Apply final awakening bonus
+    if (enhance < 20) return; // Less than +20 doesn't have bonus
+    for (int i = Stats::luck; i < Stats::numStats; i++) {
+        if (statBenefits[(Stats::Stat) i] == 0) continue; // Skip if no stat bonus
+        statBenefits[(Stats::Stat) i] += ((enhance - 20) * 5 + 10) * statBenefits[(Stats::Stat) i] / 100 * 1 / 3;
+        statBenefits[(Stats::Stat) i] = floorf(statBenefits[(Stats::Stat) i] * 100) / 100; // Round down
+    }
+}
+
+void BeltBuilder::setBeltEnhance(int level) {
+    enhance = level;
 }
 
 QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int stage) {
