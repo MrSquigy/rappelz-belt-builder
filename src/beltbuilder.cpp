@@ -24,6 +24,12 @@ void BeltBuilder::resetBuild() {
 
 void BeltBuilder::setBuild(QList<QPair<QString, int>> build) {
     resetBuild();
+    float cap = 30.f; // +0 - +19 is 30% stat cap
+
+    // Calculate stat cap
+    if (enhance > 0) cap = enhance == 20 ? 31.f : 31.f + (enhance - 20) * 0.5;
+    // The enhancement on the belt increases the maximum stat cap
+    // from 30% to 33.5%, +20 is 31%, afterwards add 0.5% per enhance
 
     // Calculate stat benefits
     for (QPair<QString, int> slot : build) {
@@ -31,16 +37,8 @@ void BeltBuilder::setBuild(QList<QPair<QString, int>> build) {
 
         QList<QPair<Stats::Stat, float>> benefits = getPetBenefits(slot.first, slot.second);
         for (QPair<Stats::Stat, float> benefit : benefits) {
-            statBenefits[benefit.first] = std::min(statBenefits[benefit.first] + benefit.second, 30.f);
+            statBenefits[benefit.first] = std::min(statBenefits[benefit.first] + benefit.second, cap);
         }
-    }
-
-    // Apply final awakening bonus
-    if (enhance < 20) return; // Less than +20 doesn't have bonus
-    for (int i = Stats::luck; i < Stats::numStats; i++) {
-        if (statBenefits[(Stats::Stat) i] == 0) continue; // Skip if no stat bonus
-        statBenefits[(Stats::Stat) i] += ((enhance - 20) * 5 + 10) * statBenefits[(Stats::Stat) i] / 100 * 1 / 3;
-        statBenefits[(Stats::Stat) i] = floorf(statBenefits[(Stats::Stat) i] * 100) / 100; // Round down
     }
 }
 
