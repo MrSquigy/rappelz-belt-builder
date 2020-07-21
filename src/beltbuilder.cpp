@@ -66,6 +66,11 @@ QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int st
         stats.append({Stats::str, Stats::int_, Stats::patk, Stats::matk});
     }
 
+    if (pet == "Bloodthirsty Slaughterer") {
+        benefit = 19 + 1 * stage;
+        stats.append({Stats::str, Stats::patk});
+    }
+
     if (pet == "Blue Pixie" || pet == "Red Pixie" || pet == "Octopus") {
         benefit = 11 + 1 * stage;
         stats.append({Stats::int_, Stats::matk});
@@ -74,6 +79,20 @@ QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int st
     if (pet == "Cerberus") {
         benefit = 8.5 + 0.5 * stage;
         stats.append({Stats::str, Stats::dex, Stats::patk, Stats::pacc});
+    }
+
+    if (pet == "Crystal Golem") {
+        benefit = 19 + 1 * stage;
+        stats.append({Stats::vit, Stats::blockDef});
+    }
+
+    if (pet == "Crystal Spider") {
+        benefit = 8.5 + 0.5 * stage;
+        stats.append({Stats::str, Stats::int_});
+
+        // Some pets don't add the same benefit to all stats
+        benefits.append(QPair<Stats::Stat, float>(Stats::matk, benefit + 1));
+        benefits.append(QPair<Stats::Stat, float>(Stats::macc, benefit + 1));
     }
 
     if (pet == "Death Gladiator") {
@@ -85,13 +104,23 @@ QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int st
         benefit = 9.5 + 0.5 * stage;
         stats.append({Stats::patk, Stats::atkSpd});
 
-        // Lydians/Death Tyrants are the only pets that don't add the same benefit to all stats
+        // Some pets don't add the same benefit to all stats
         benefits.append(QPair<Stats::Stat, float>(Stats::str, benefit * 2));
     }
 
     if (pet == "Drillbot") {
         benefit = 9.5 + 0.5 * stage;
         stats.append({Stats::vit, Stats::wis, Stats::pdef, Stats::mdef});
+    }
+
+    if (pet == "Ethereal Pixie") {
+        benefit = 9.5 + 0.5 * stage;
+        stats.append({Stats::int_, Stats::wis, Stats::matk, Stats::macc});
+    }
+
+    if (pet == "Forest Pixie") {
+        benefit = 5.5 + 0.5 * stage;
+        stats.append({Stats::dex, Stats::agi, Stats::patk, Stats::eva});
     }
 
     if (pet == "Genie") {
@@ -101,7 +130,12 @@ QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int st
 
     if (pet == "Gnoll") {
         benefit = 15 + 1 * stage;
-        stats.append({Stats::vit, Stats::block});
+        stats.append({Stats::vit, Stats::blockPer});
+    }
+
+    if (pet == "Grandmaster Hector") {
+        benefit = 10.5 + 0.5 * stage;
+        stats.append({Stats::str, Stats::int_, Stats::patk, Stats::matk});
     }
 
     if (pet == "Harpy") {
@@ -128,7 +162,7 @@ QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int st
         benefit = 5.5 + 0.5 * stage;
         stats.append({Stats::vit, Stats::str});
 
-        // Lydians/Death Tyrants are the only pets that don't add the same benefit to all stats
+        // Some pets don't add the same benefit to all stats
         benefits.append(QPair<Stats::Stat, float>(Stats::pdef, benefit * 2));
     }
 
@@ -205,6 +239,11 @@ QList<QPair<Stats::Stat, float>> BeltBuilder::getPetBenefits(QString pet, int st
     if (pet == "White Dragon") {
         benefit = 9.5 + 0.5 * stage;
         stats.append({Stats::int_, Stats::vit, Stats::matk, Stats::pdef});
+    }
+
+    if (pet == "Wind Pixie") {
+        benefit = 9.5 + 0.5 * stage;
+        stats.append({Stats::int_, Stats::wis, Stats::matk, Stats::mres});
     }
 
     if (pet == "Wolf") {

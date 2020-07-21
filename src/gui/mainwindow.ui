@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>680</width>
-    <height>350</height>
+    <height>362</height>
    </rect>
   </property>
   <property name="font">
@@ -573,53 +573,11 @@
       <x>356</x>
       <y>13</y>
       <width>316</width>
-      <height>326</height>
+      <height>341</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="layStats">
-     <item row="4" column="1">
-      <widget class="QLabel" name="lblWis">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>Wisdom</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="0">
-      <widget class="QLabel" name="lblAtkSpd">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>Atk Spd</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="lblAgi">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>Agility</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
+     <item row="3" column="1">
       <widget class="QLabel" name="lblVit">
        <property name="font">
         <font>
@@ -633,8 +591,8 @@
        </property>
       </widget>
      </item>
-     <item row="10" column="1">
-      <widget class="QLabel" name="lblHpReg">
+     <item row="4" column="1">
+      <widget class="QLabel" name="lblDex">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>
@@ -643,11 +601,11 @@
         </font>
        </property>
        <property name="text">
-        <string>HP Regen</string>
+        <string>Dexterity</string>
        </property>
       </widget>
      </item>
-     <item row="10" column="0">
+     <item row="11" column="0">
       <widget class="QLabel" name="lblCrit">
        <property name="font">
         <font>
@@ -661,77 +619,7 @@
        </property>
       </widget>
      </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="lblPdef">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>P. Defense</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1">
-      <widget class="QLabel" name="lblMdef">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>M. Defense</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QLabel" name="lblBlock">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>Block per</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="lblEva">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>Evasion</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="lblStatBenefits">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>Stat Benefits</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="lblStr">
        <property name="font">
         <font>
@@ -748,8 +636,8 @@
        </property>
       </widget>
      </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="lblPacc">
+     <item row="9" column="0">
+      <widget class="QLabel" name="lblEva">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>
@@ -758,25 +646,11 @@
         </font>
        </property>
        <property name="text">
-        <string>P. Accuracy</string>
+        <string>Evasion</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLabel" name="lblDex">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>Dexterity</string>
-       </property>
-      </widget>
-     </item>
-     <item row="11" column="1">
+     <item row="12" column="1">
       <widget class="QLabel" name="lblMpReg">
        <property name="font">
         <font>
@@ -790,7 +664,105 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
+     <item row="1" column="0">
+      <widget class="QLabel" name="lblStatBenefits">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>Stat Benefits</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QLabel" name="lblHpReg">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>HP Regen</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="lblMdef">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>M. Defense</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLabel" name="lblCastSpd">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>Cast Spd</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="lblPdef">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>P. Defense</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="lblPatk">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>P. Attack</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lblInt_">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>Int</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
       <widget class="QLabel" name="lblLuck">
        <property name="font">
         <font>
@@ -805,6 +777,76 @@
       </widget>
      </item>
      <item row="6" column="1">
+      <widget class="QLabel" name="lblMatk">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>M. Attack</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLabel" name="lblWis">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>Wisdom</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="lblAgi">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>Agility</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="lblAtkSpd">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>Atk Spd</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="lblPacc">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>P. Accuracy</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
       <widget class="QLabel" name="lblMacc">
        <property name="font">
         <font>
@@ -818,8 +860,22 @@
        </property>
       </widget>
      </item>
+     <item row="13" column="1">
+      <widget class="QLabel" name="lblBlockPer">
+       <property name="font">
+        <font>
+         <family>Leelawadee UI</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferDefault</stylestrategy>
+        </font>
+       </property>
+       <property name="text">
+        <string>Block Per</string>
+       </property>
+      </widget>
+     </item>
      <item row="9" column="1">
-      <widget class="QLabel" name="lblCastSpd">
+      <widget class="QLabel" name="lblMres">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>
@@ -828,12 +884,12 @@
         </font>
        </property>
        <property name="text">
-        <string>Cast Spd</string>
+        <string>M. Res</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="lblInt_">
+     <item row="13" column="0">
+      <widget class="QLabel" name="lblBlockDef">
        <property name="font">
         <font>
          <family>Leelawadee UI</family>
@@ -842,35 +898,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Int</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="lblPatk">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>P. Attack</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLabel" name="lblMatk">
-       <property name="font">
-        <font>
-         <family>Leelawadee UI</family>
-         <pointsize>10</pointsize>
-         <stylestrategy>PreferDefault</stylestrategy>
-        </font>
-       </property>
-       <property name="text">
-        <string>M. Attack</string>
+        <string>Block Def</string>
        </property>
       </widget>
      </item>

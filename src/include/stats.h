@@ -23,12 +23,14 @@ public:
                pdef,
                mdef,
                eva,
-               block,
+               blockPer,
+               blockDef,
                atkSpd,
                castSpd,
                crit,
                hpReg,
                mpReg,
+               mres,
                numStats
               };
     Q_ENUM(Stat)
@@ -50,12 +52,14 @@ public:
         names[pdef] = "P. Defense";
         names[mdef] = "M. Defense";
         names[eva] = "Evasion";
-        names[block] = "Block Per";
+        names[blockPer] = "Block Per";
+        names[blockDef] = "Block Def";
         names[atkSpd] = "Attack Speed";
         names[castSpd] = "Cast Speed";
         names[crit] = "Crit Rate";
         names[hpReg] = "HP Regen";
         names[mpReg] = "MP Regen";
+        names[mres] = "M. Res";
 
         return names;
     }
